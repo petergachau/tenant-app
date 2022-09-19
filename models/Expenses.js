@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const tourSchema = mongoose.Schema({
   security: {type:Number},
   electricityCharges:{type:Number},
-  waterCharges:{type:Number,required:true},
+  waterCharges:{type:Number},
   careTakerSalary: {type:Number},
   maintananceSalary: {type:Number},
   wifi: {type:Number},

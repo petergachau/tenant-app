@@ -26,6 +26,7 @@ import userCrudRouter  from './routes/userCrud.js'
 import summaryRouter  from './routes/summary.js'
 import singleSummaryRouter  from './routes/summarySingles.js'
 import mpesaRouter from './routes/mpesa.js'
+import messageRouter from './routes/message.js'
 //twilio requirements -- Texting API .js
 // const accountSid = '___YOUR___ACCOUNT__SID';
 // const authToken = '___YOUR___AUTHENTICATION__TOKEN'; 
@@ -61,10 +62,10 @@ app.use('/usercrud', userCrudRouter)
 app.use('/summary', summaryRouter)
 app.use('/stk', mpesaRouter)
 app.use('/status', singleSummaryRouter)
+app.use('/message', messageRouter)
 
 app.get('/', (req, res) => res.send('Hello World Tenant!'));
 
-app.listen(process.env.PORT || port, () => console.log(`Example app listening at http://localhost:${port}`));
 
 
 mongoose

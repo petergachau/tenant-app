@@ -15,7 +15,7 @@ const tourSchema = mongoose.Schema({
   datePaid:{type:String},
   phone:{type:String},
   imageFile:{type:String},
-  aptType:{type:Number},
+  aptType:{type:String},
   arrears:{type:Number},
   wifi:{type:Number},
   penalties:{type:Number},
