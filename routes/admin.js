@@ -379,7 +379,7 @@ router.get ('/totalrenta',  async (req,res)=>{
             {
                 $project:{
                     month:{$month:'$createdAt'},
-                    total:{$sum:["$amount","$payment","$waterFee","$aptType","$arrears","$wifi","$balance","$penalties"]}
+                    total:{$sum:["$amount","$payment","$waterFee","$arrears","$wifi","$balance","$penalties"]}
                     
                 }
             },
