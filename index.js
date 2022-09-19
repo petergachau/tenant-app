@@ -71,6 +71,6 @@ app.get('/', (req, res) => res.send('Hello World Tenant!'));
 mongoose
   .connect(process.env.MONGODB_URL)
   .then(() => {
-    app.listen(port, () => console.log(`Server running on port ${port}`));
+    app.listen(process.env.PORT, () => console.log(`Server running on port ${process.env.PORT}`));
   })
   .catch((error) => console.log(`${error} did not connect`));
