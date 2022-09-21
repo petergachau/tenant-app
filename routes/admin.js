@@ -1240,6 +1240,30 @@ router.get ('/charts',  async (req,res)=>{
     }
 
  })
+
+ router.get("/search:key", async (req,res)=>{
+    let result=await VacationModal.find({
+      "$or":[
+        {
+          houseNo:{$regex:req.params.key},
+          
+        }
+      ]
+    })
+    res.send(result)
+  });
+  router.get("/searchs:key", async (req,res)=>{
+    let result=await ComplainModal.find({
+      "$or":[
+        {
+          houseNo:{$regex:req.params.key},
+          
+        }
+      ]
+    })
+    res.send(result)
+  });
+
  router.get ('/chartss',  async (req,res)=>{
     const previosMonth=moment()
     .month(moment().month()-3)

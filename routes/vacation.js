@@ -21,7 +21,6 @@ router.get("/tag/:tag", getToursByTag);
 router.post("/relatedTours", getRelatedTours);
 router.get("/", getTours);
 router.get("/:id", getTour);
-
 router.get("/search:key", async (req,res)=>{
   let result=await VacationModal.find({
     "$or":[
