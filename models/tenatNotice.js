@@ -8,7 +8,7 @@ const tourSchema = mongoose.Schema({
   penalty: {type:String},
   currentraed: {type:String},
   waters: {type:String},
-  prevRead: {type:String},
+  prevReads: {type:String},
   units: {type:String},
   services: {type:String},
   
