@@ -31,14 +31,17 @@ import messageRouter from './routes/message.js'
 // const accountSid = '___YOUR___ACCOUNT__SID';
 // const authToken = '___YOUR___AUTHENTICATION__TOKEN'; 
 // const client = new twilio(accountSid, authToken);
-const port=5000
+const PORT=5000;
 const app = express();
 dotenv.config();
 
-app.use(morgan("dev"));
-app.use(express.json({ limit: "30mb", extended: true }));
-app.use(express.urlencoded({ limit: "30mb", extended: true }));
+app.use(express.json({ limit: "4mb" }));
+app.use(express.urlencoded({ extended: true }));
 app.use(cors());
+
+app.get('/', (req, res) => res.send('Hello Butere School'));
+app.set("view engine", "ejs");
+app.use(express.urlencoded({ extended: false }));
 
 app.use("/users", userRouter); // http://localhost:5000/users/signup
 app.use("/project", tourRouter);
@@ -71,6 +74,6 @@ app.use('/message', messageRouter)
 mongoose
   .connect(process.env.MONGODB_URL)
   .then(() => {
-    app.listen(process.env.PORT, () => console.log(`Server running on port ${process.env.PORT}`));
+    app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
   })
   .catch((error) => console.log(`${error} did not connect`));
