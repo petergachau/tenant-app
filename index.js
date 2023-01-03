@@ -28,16 +28,14 @@ import singleSummaryRouter  from './routes/summarySingles.js'
 import mpesaRouter from './routes/mpesa.js'
 import messageRouter from './routes/message.js'
 
-dotenv.config()
-const app=express()
-const PORT=5000;
-app.use(express.json({ limit: "4mb" }));
-app.use(express.urlencoded({ extended: true }));
+const app = express();
+dotenv.config();
+
+app.use(morgan("dev"));
+app.use(express.json({ limit: "30mb", extended: true }));
+app.use(express.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
-app.get('/', (req, res) => res.send('Hello Butere School'));
-app.set("view engine", "ejs");
-app.use(express.urlencoded({ extended: false }));
 
 app.use("/users", userRouter); // http://localhost:5000/users/signup
 app.use("/project", tourRouter);
