@@ -27,12 +27,14 @@ import summaryRouter  from './routes/summary.js'
 import singleSummaryRouter  from './routes/summarySingles.js'
 import mpesaRouter from './routes/mpesa.js'
 import messageRouter from './routes/message.js'
+
 const app = express();
 dotenv.config();
 app.use(morgan("dev"));
 app.use(express.json({ limit: "30mb", extended: true }));
 app.use(express.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
+
 app.use("/users", userRouter); // http://localhost:5000/users/signup
 app.use("/project", tourRouter);
 app.use('/milestone', milestone)
