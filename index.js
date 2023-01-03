@@ -31,7 +31,7 @@ import messageRouter from './routes/message.js'
 // const accountSid = '___YOUR___ACCOUNT__SID';
 // const authToken = '___YOUR___AUTHENTICATION__TOKEN'; 
 // const client = new twilio(accountSid, authToken);
-
+const PORT=5000;
 const app = express();
 dotenv.config();
 
