@@ -31,11 +31,6 @@ import messageRouter from './routes/message.js'
 const PORT=5000;
 const app = express();
 
-//twilio requirements -- Texting API .js
-// const accountSid = '___YOUR___ACCOUNT__SID';
-// const authToken = '___YOUR___AUTHENTICATION__TOKEN'; 
-// const client = new twilio(accountSid, authToken);
-
 dotenv.config();
 
 app.use(express.json({ limit: "4mb" }));
