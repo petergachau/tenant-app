@@ -64,7 +64,7 @@ app.use('/stk', mpesaRouter)
 app.use('/status', singleSummaryRouter)
 app.use('/message', messageRouter)
 
-app.get('/', (req, res) => res.send('Hello Tenant App'));
+// app.get('/', (req, res) => res.send('Hello Tenant App'));
 
 
 
