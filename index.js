@@ -28,6 +28,9 @@ import singleSummaryRouter  from './routes/summarySingles.js'
 import mpesaRouter from './routes/mpesa.js'
 import messageRouter from './routes/message.js'
 
+// Configureations
+
+
 const app = express();
 dotenv.config();
 app.use(morgan("dev"));
